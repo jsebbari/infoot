@@ -1,0 +1,36 @@
+.loaderPageContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  background-image: url("https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2021/06/euro-2020-les-supporters-tribune-ont-ils-une-influence-sur-match-750x410.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.logoAndLink {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeLink {
+  background: none;
+  padding: 1rem 3rem;
+  border:.5px silver solid;
+}
+
+.homeLink:hover {
+  background: rgba(177, 103, 39, 0.629);
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.817);
+}

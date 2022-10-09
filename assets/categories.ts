@@ -1,0 +1,1 @@
+export const categories = ["ligue des champions","liga","serie a","ligue 1", "premier league", "international"]

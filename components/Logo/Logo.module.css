@@ -1,0 +1,19 @@
+.logoName {
+    background-color: rgba(31,31,31,0);
+    background-image:  linear-gradient(#1a8eb3 0.7000000000000001px, transparent 0.7000000000000001px), linear-gradient(to right, #1a8eb3 0.7000000000000001px, rgba(31,31,31,0) 0.7000000000000001px);
+    background-size: 14px 14px;
+    padding:.3rem .6rem ;
+    color:white;
+}
+
+
+.logoNameInHome{
+    font-size:7rem;
+    margin: 0;
+}
+
+@media (width <= 700px){
+    .logoNameInHome{
+        font-size: 3rem;
+    }
+}
