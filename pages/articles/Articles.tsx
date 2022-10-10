@@ -59,7 +59,6 @@ export default function ServerSideProps(props: ArticlesTypes) {
           className={style.cardNew}
           style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
         >
-          <UseHead title="Actualités" content="L'actualité football" />
           <div className={style.imageCategoryContainer}>
             <Image src={articleImage} alt="img_category" layout="fill"/>
             <span className={style.category}>{firstLetterCase(category)}</span>
@@ -81,6 +80,7 @@ export default function ServerSideProps(props: ArticlesTypes) {
       className={style.staticProps}
       style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
     >
+        <UseHead title="Actualités" content="L'actualité football" />
       <h1>Actualités</h1>
       <FilterArticles
         categoriesToDisplay={categoriesToDisplay}
