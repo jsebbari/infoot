@@ -15,7 +15,7 @@ export default function Article({ article }: ArticlesTypes) {
   const { title, intro, content, image, category, date } = article;
   dayjs.locale("fr");
 
-  // useConetxt___________________________________________________________
+  // useContext___________________________________________________________
   const themeFromContext = useContext(ThemeContext);
   // functions____________________________________________________________
   const backgroundColor =
@@ -52,6 +52,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const docSnap = await getDoc(doc(db, "articles", id));
 
   const article = docSnap.data();
+
   return {
     props: { article },
   };

@@ -3,10 +3,10 @@ import { useRouter } from "next/router";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Navbar from "../components/Navbar";
+import Navigation from "../components/Navigation";
 import { ThemeContextProvider } from "../context/ThemeContext";
 import Footer from "../components/Footer";
 import PropagateLoader from "react-spinners/PropagateLoader";
-import LoaderPage from "../components/HomePage";
 import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -43,7 +43,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           aria-label="Loading Spinner"
           className="spinner"
         />
-        <Navbar />
+        {/* <Navbar /> */}
+        <Navigation/>
         <Component {...pageProps} />
         <Footer />
       </div>

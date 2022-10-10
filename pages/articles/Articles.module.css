@@ -95,7 +95,6 @@ cursor: pointer;
 
 
 .newViewContainer{
-  min-width:100vw;
   display:flex;
   justify-content: center;
   padding:100px 0;

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import style from "./Logo.module.css";
-import { GiSoccerKick } from "react-icons/gi";
+import { GiSoccerKick, GiSoccerBall } from "react-icons/gi";
+
 import Link from "next/link";
 import AOS from "aos";
 
@@ -23,8 +24,8 @@ const Logo = (props: IProps) => {
   const soccerIcon = (
     <GiSoccerKick
     data-aos= {displayIn &&"fade-left"}
-      size={displayIn ? 300 : 50}
-      color={"rgba(29, 151, 181, 0.941)"}
+      size={displayIn ? 200 : 50}
+      color={"rgba(29, 151, 181, 0.941)"} 
     />
   );
 
@@ -42,14 +43,26 @@ const Logo = (props: IProps) => {
       </Link>
     );
   } else {
+
+    const firstBallIcon =   <GiSoccerBall
+      size={100}
+      color={"rgba(181, 102, 29, 0.941)"} 
+    />
+    const secondBallIcon =   <GiSoccerBall
+    size={100}
+    color={"rgba(29, 151, 181, 0.941)"} 
+  />
+
+    
     return (
-   
-      <div style={{ display: "flex",alignItems: "center"}}>
-        {soccerIcon}
+         
+        <div style={{display:'flex', flexDirection:'column', alignItems:'center',justifyContent:'center'}}>
         <h2 className={logoClassName} data-aos="fade-right">
-          Info<span style={{ color: "rgba(181, 102, 29, 0.941)" }}>o</span>t
+        Inf{firstBallIcon}{secondBallIcon}t
         </h2>
-      </div>
+        <p> L'info complétement foot </p>
+        </div>
+
        
     );
   }

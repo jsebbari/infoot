@@ -14,6 +14,7 @@
 .logoAndLink {
   z-index: 2;
   display: flex;
+  padding:0 2rem;
   flex-direction: column;
   align-items: center;
 }
@@ -30,7 +31,7 @@
 
 .overlay {
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.817);
 }
