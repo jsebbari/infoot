@@ -60,7 +60,7 @@ const Logo = (props: IProps) => {
         <h2 className={logoClassName} data-aos="fade-right">
         Inf{firstBallIcon}{secondBallIcon}t
         </h2>
-        <p> L'info complétement foot </p>
+        <p> {"L'info complétement foot"} </p>
         </div>
 
        
