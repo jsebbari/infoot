@@ -55,14 +55,7 @@
 
 
 @media (width <= 700px) {
-  .connect-user-text {
-    display: none;
-  }
 
-  .user-connect-icon {
-    width: 30px;
-    height: 40px;
-  }
 
   .nav{
     width: 100vw;
@@ -71,7 +64,7 @@
   }
 
   .hideNav {
-    top: -100vw;
+    top: -100vh;
   }
   .showNav {
     height: 100vh;
