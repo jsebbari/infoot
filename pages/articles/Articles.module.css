@@ -31,7 +31,7 @@
   width: 480px;
   height: 350px;
   transition: scale .5s ease-in-out;
-  box-shadow: 2px 2px 2px #128091;
+  box-shadow: 2px 2px 2px silver;
 }
 
 .presentationCard{
@@ -59,7 +59,7 @@
 .cardNew:hover{
 scale:1.1;
 cursor: pointer;
-box-shadow: 2px 2px 2px #ffffff;
+box-shadow: 2px 2px 2px #128091;
 }
 
 .links {
