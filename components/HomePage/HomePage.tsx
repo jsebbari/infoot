@@ -22,7 +22,7 @@ const Home = () => {
         <div className={style.logoAndLink}>
           <Logo displayIn="home" />
           <Link href="/articles">
-            <a className={style.homeLink} data-aos="zoom-in">
+            <a className={style.homeLink}>
               Actualités
             </a>
           </Link>

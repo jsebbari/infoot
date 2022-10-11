@@ -1,25 +1,25 @@
 .logoName {
-  background-color: rgba(31, 31, 31, 0);
-  background-image: linear-gradient(
-      #1a8eb3 0.7000000000000001px,
-      transparent 0.7000000000000001px
-    ),
-    linear-gradient(
-      to right,
-      #1a8eb3 0.7000000000000001px,
-      rgba(31, 31, 31, 0) 0.7000000000000001px
-    );
-  background-size: 14px 14px;
-  padding: 0.3rem 0.6rem;
   color: rgb(255, 255, 255);
+  font-size: 2rem;
+  letter-spacing: 3px;
 }
+
+
 
 .logoNameInHome {
   font-size: 10rem;
 }
 
+.slogan{
+  font-size: 3rem;
+}
+
+.balleIcon {
+  margin: 0 3px;
+}
+
 @media (width <= 700px) {
-  .logoNameInHome {
-    font-size: 6rem;
+  .slogan{
+    font-size: 2rem;
   }
 }

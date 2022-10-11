@@ -25,12 +25,8 @@ export default function ServerSideProps(props: ArticlesTypes) {
   const [categoriesToDisplay, setCategoriesToDisplay] = useState<string[]>([]);
   const [articleFiltered, setArticleFiltered] = useState<ArticleTypes[]>([]);
 
-
   // useContext___________________________________________________________
   const themeFromContext = useContext(ThemeContext);
-
-
-
 
   // functions____________________________________________________________
   const backgroundColor =
@@ -49,7 +45,6 @@ export default function ServerSideProps(props: ArticlesTypes) {
   );
 
   const displayArticles = sortedDesc.map((article) => {
-    
     const { title, intro, category, image, id, date } = article;
     const articleImage = image ? image : imageArticle(category);
 
@@ -60,7 +55,7 @@ export default function ServerSideProps(props: ArticlesTypes) {
           style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
         >
           <div className={style.imageCategoryContainer}>
-            <Image src={articleImage} alt="img_category" layout="fill"/>
+            <Image src={articleImage} alt="img_category" layout="fill" />
             <span className={style.category}>{firstLetterCase(category)}</span>
             <span className={style.date}>
               {dayjs(date).format("DD/MM/YYYY")}
@@ -80,7 +75,7 @@ export default function ServerSideProps(props: ArticlesTypes) {
       className={style.staticProps}
       style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
     >
-        <UseHead title="Actualités" content="L'actualité football" />
+      <UseHead title="Actualités" content="L'actualité football" />
       <h1>Actualités</h1>
       <FilterArticles
         categoriesToDisplay={categoriesToDisplay}
@@ -102,13 +97,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return { ...parseArticle, id: doc.id };
   });
 
-  if (!articles.length){ 
+  if (!articles.length) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
   return {
-    props: { articles }, 
-  }
- 
+    props: { articles },
+  };
 };

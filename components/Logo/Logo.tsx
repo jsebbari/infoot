@@ -20,34 +20,36 @@ const Logo = (props: IProps) => {
   const { displayIn } = props;
   const logoClassName =
     displayIn === "home" ? style.logoNameInHome : style.logoName;
+
   const soccerIcon = (
     <GiSoccerKick
-      data-aos={displayIn && "fade-left"}
-      size={displayIn ? 200 : 50}
+      size={50}
       color={"rgba(29, 151, 181, 0.941)"}
     />
+  );
+
+  const firstBallIcon = (
+    <GiSoccerBall size={ displayIn ? 80:20} color={"rgba(181, 102, 29, 0.941)"} className={style.ballIcon} />
+  );
+  const secondBallIcon = (
+    <GiSoccerBall size={ displayIn ? 80:20} color={"rgba(29, 151, 181, 0.941)"} className={style.ballIcon} />
   );
 
   if (!displayIn) {
     return (
       <Link href="/">
         <div
-          style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+          style={{ display: "flex", alignItems: "center", cursor: "pointer", color:'black'}}
         >
           {soccerIcon}
           <h2 className={logoClassName}>
-            Info<span style={{ color: "rgba(181, 102, 29, 0.941)" }}>o</span>t
+             Inf{firstBallIcon}{secondBallIcon}t
           </h2>
         </div>
       </Link>
     );
   } else {
-    const firstBallIcon = (
-      <GiSoccerBall size={100} color={"rgba(181, 102, 29, 0.941)"} />
-    );
-    const secondBallIcon = (
-      <GiSoccerBall size={100} color={"rgba(29, 151, 181, 0.941)"} />
-    );
+
 
     return (
       <div
@@ -56,13 +58,14 @@ const Logo = (props: IProps) => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          marginBottom:"1rem",
         }}
       >
         <h2 className={logoClassName} data-aos="fade-right">
           Inf{firstBallIcon}
           {secondBallIcon}t
         </h2>
-        <p> {"L'info complétement foot"}</p>
+        <p className={style.slogan}> {"L'info complétement foot"}</p>
       </div>
     );
   }
