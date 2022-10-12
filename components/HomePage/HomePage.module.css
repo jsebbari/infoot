@@ -12,6 +12,7 @@
 }
 
 .logoAndLink {
+  position: relative;
   z-index: 2;
   display: flex;
   padding:2rem;
@@ -19,11 +20,36 @@
   align-items: center;
   background: rgba(12, 14, 12, 0.467);
   border-radius: 20px;
+  overflow: hidden;
 }
+
+.logoAndLink::before{
+  content: "Live";
+position:absolute;
+background: rgb(241, 85, 85);
+padding:.2rem 7rem;
+transform: rotate(45deg);
+right:-80px;
+top:20px;
+text-align: center;
+}
+
 
 .homeLink {
   background: none;
   padding: 1rem 3rem;
+  position: relative;
+}
+
+
+.homeLink::after{
+  content: "";
+position:absolute;
+background: rgb(246, 239, 239);
+height:2px;
+width:100%;
+left:0;
+bottom:0;
 }
 
 .homeLink:hover {

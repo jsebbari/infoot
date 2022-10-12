@@ -6,7 +6,7 @@ import Link from "next/link";
 import AOS from "aos";
 
 interface IProps {
-  displayIn?: string;
+  displayInLargeScreen?: boolean;
 }
 const Logo = (props: IProps) => {
   const aosAnime = () => {
@@ -17,40 +17,46 @@ const Logo = (props: IProps) => {
     return aosAnime();
   }, []);
 
-  const { displayIn } = props;
+  const { displayInLargeScreen } = props;
   const logoClassName =
-    displayIn === "home" ? style.logoNameInHome : style.logoName;
+    displayInLargeScreen ? style.logoNameInHome : style.logoName;
 
   const soccerIcon = (
-    <GiSoccerKick
-      size={50}
-      color={"rgba(29, 151, 181, 0.941)"}
-    />
+    <GiSoccerKick size={50} color={"rgba(29, 151, 181, 0.941)"} />
   );
-
   const firstBallIcon = (
-    <GiSoccerBall size={ displayIn ? 80:20} color={"rgba(181, 102, 29, 0.941)"} className={style.ballIcon} />
+    <GiSoccerBall  color={"rgba(181, 102, 29, 0.941)"} className={style.ballIcon} />
   );
   const secondBallIcon = (
-    <GiSoccerBall size={ displayIn ? 80:20} color={"rgba(29, 151, 181, 0.941)"} className={style.ballIcon} />
+    <GiSoccerBall  color={"rgba(29, 151, 181, 0.941)"} className={style.ballIcon} />
   );
 
-  if (!displayIn) {
+  if (!displayInLargeScreen) {
+    const firstBallIcon = (
+      <GiSoccerBall size={25} color={"rgba(181, 102, 29, 0.941)"} />
+    );
+    const secondBallIcon = (
+      <GiSoccerBall size={25} color={"rgba(29, 151, 181, 0.941)"} />
+    );
     return (
       <Link href="/">
         <div
-          style={{ display: "flex", alignItems: "center", cursor: "pointer", color:'black'}}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+            color: "black",
+          }}
         >
           {soccerIcon}
           <h2 className={logoClassName}>
-             Inf{firstBallIcon}{secondBallIcon}t
+            Inf{firstBallIcon}
+            {secondBallIcon}t
           </h2>
         </div>
       </Link>
     );
   } else {
-
-
     return (
       <div
         style={{
@@ -58,10 +64,10 @@ const Logo = (props: IProps) => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          marginBottom:"1rem",
+          marginBottom: "1rem",
         }}
       >
-        <h2 className={logoClassName} data-aos="fade-right">
+        <h2 className={logoClassName} data-aos="zoom-in">
           Inf{firstBallIcon}
           {secondBallIcon}t
         </h2>

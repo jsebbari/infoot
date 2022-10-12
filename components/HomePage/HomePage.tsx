@@ -20,10 +20,10 @@ const Home = () => {
       <div className={style.loaderPageContainer}>
         <div className={style.overlay}></div>
         <div className={style.logoAndLink}>
-          <Logo displayIn="home" />
+          <Logo displayInLargeScreen={true} />
           <Link href="/articles">
             <a className={style.homeLink}>
-              Actualités
+              Voir l'actualité
             </a>
           </Link>
         </div>

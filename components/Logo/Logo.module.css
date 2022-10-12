@@ -4,22 +4,25 @@
   letter-spacing: 3px;
 }
 
-
-
 .logoNameInHome {
   font-size: 10rem;
 }
 
-.slogan{
+.slogan {
   font-size: 3rem;
 }
 
-.balleIcon {
+.ballIcon {
   margin: 0 3px;
+  width: 80px;
+  height: 80px;
 }
 
 @media (width <= 700px) {
-  .slogan{
+  .slogan {
     font-size: 2rem;
+  }
+  .logoNameInHome {
+    font-size: 7rem;
   }
 }
