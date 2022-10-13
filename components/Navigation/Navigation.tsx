@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import style from "./Navigation.module.css";
+import styles from "./Navigation.module.css";
 import { useRouter } from "next/router";
 import OutsideClickHandler from "react-outside-click-handler";
 import { Squash as Hamburger } from "hamburger-react";
@@ -11,6 +11,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 
 const Navigation = () => {
   //states _______________________________________________
+  const [screenIsSmall, setScreenIsSmall] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
 
   // useContext___________________________________________________________
@@ -24,43 +25,71 @@ const Navigation = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const showNavToggle = !showNavbar ? style.hideNav : style.showNav;
+  const screenSize = () => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 700) {
+        return setScreenIsSmall(true);
+      }
+      return setScreenIsSmall(false);
+    });
+  };
+  useEffect(() => {
+    screenSize();
+  }, []);
+
+  const showNavToggle =
+    screenIsSmall && !showNavbar ? styles.hideNav : styles.showNav;
   const toggleMenuBtnColor = () => {
-    if (themeFromContext && themeFromContext.theme === "Light" && !showNavbar && router.pathname!== "/") {
+    if (
+      themeFromContext &&
+      themeFromContext.theme === "Light" &&
+      !showNavbar &&
+      router.pathname !== "/"
+    ) {
       return "black";
     }
-    return "white"
+    return "white";
   };
-
+  
   return (
     <OutsideClickHandler
-      onOutsideClick={() => {
-        showNavbar && setShowNavbar(false);
-      }}
+    onOutsideClick={() => {
+      showNavbar && setShowNavbar(false);
+    }}
     >
-      <nav className={style.Navigation}>
-        <div style={{ zIndex: 2000 }}>
-          <Hamburger
-            toggled={showNavbar}
-            toggle={setShowNavbar}
-            hideOutline={true}
-            color={toggleMenuBtnColor()}
-          />
+       {screenIsSmall && (
+        <div className={styles.hamburgerBtn}>
+            <Hamburger
+              toggled={showNavbar}
+              toggle={setShowNavbar}
+              hideOutline={true}
+              color={toggleMenuBtnColor()}
+            />
+          </div>
+          )}
+      <nav className={`${styles.Navigation} ${showNavToggle}`}>
+      <div className={styles.logoInNavbar}><Logo/></div>
+        <div className={styles.hamburgerBtn}>
+         
         </div>
-        <ul className={`${showNavToggle} ${style.nav}`} onClick={handleShowNav}>
-          <li className={style.navItems}>
+        <ul
+          className={`${styles.navList}`}
+          onClick={handleShowNav}
+        >
+          <li className={styles.navItems}>
             <Link href="/">{homeIcon}</Link>
           </li>
-          <li className={style.navItems}>
+          <li className={styles.navItems}>
             <Link href="/articles">Actualités</Link>
           </li>
-          <li className={style.navItems}>
+          <li className={styles.navItems}>
             <Link href="/">About</Link>
           </li>
-          <li className={style.navItems}>
+          <li className={styles.navItems}>
             <ThemeButton />
           </li>
         </ul>
+        
       </nav>
     </OutsideClickHandler>
   );
