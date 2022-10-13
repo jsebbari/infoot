@@ -63,7 +63,7 @@ export default function ServerSideProps(props: ArticlesTypes) {
           </div>
           <div className={style.presentationCard}>
             <h4>{firstLetterCase(title)}</h4>
-            <p>{splitText(intro, 19)}...</p>
+            <p  style={{ background: `${backgroundColor}`, color: `${fontColor}` }}>{splitText(intro, 19)}...</p>
           </div>
         </div>
       </Link>

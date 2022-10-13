@@ -24,7 +24,7 @@
 }
 
 .logoAndLink::before{
-  content: "Live";
+content: "Live";
 position:absolute;
 background: rgb(241, 85, 85);
 padding:.2rem 7rem;

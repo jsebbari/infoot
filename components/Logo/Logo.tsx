@@ -10,7 +10,7 @@ interface IProps {
 }
 const Logo = (props: IProps) => {
   const aosAnime = () => {
-    AOS.init({ duration: 2000 });
+    AOS.init();
     AOS.refresh();
   };
   useEffect(() => {
@@ -18,17 +18,24 @@ const Logo = (props: IProps) => {
   }, []);
 
   const { displayInLargeScreen } = props;
-  const logoClassName =
-    displayInLargeScreen ? style.logoNameInHome : style.logoName;
+  const logoClassName = displayInLargeScreen
+    ? style.logoNameInHome
+    : style.logoName;
 
   const soccerIcon = (
     <GiSoccerKick size={50} color={"rgba(29, 151, 181, 0.941)"} />
   );
   const firstBallIcon = (
-    <GiSoccerBall  color={"rgba(181, 102, 29, 0.941)"} className={style.ballIcon} />
+    <GiSoccerBall
+      color={"rgba(181, 102, 29, 0.941)"}
+      className={style.ballIcon}
+    />
   );
   const secondBallIcon = (
-    <GiSoccerBall  color={"rgba(29, 151, 181, 0.941)"} className={style.ballIcon} />
+    <GiSoccerBall
+      color={"rgba(29, 151, 181, 0.941)"}
+      className={style.ballIcon}
+    />
   );
 
   if (!displayInLargeScreen) {
@@ -67,11 +74,22 @@ const Logo = (props: IProps) => {
           marginBottom: "1rem",
         }}
       >
-        <h2 className={logoClassName} data-aos="zoom-in">
+        <h2
+          className={logoClassName}
+          data-aos="zoom-in"
+          data-aos-duration="800"
+        >
           Inf{firstBallIcon}
           {secondBallIcon}t
         </h2>
-        <p className={style.slogan}> {"L'info complétement foot"}</p>
+        <p
+          className={style.slogan}
+          data-aos="zoom-out"
+          data-aos-duration="1000"
+        >
+          {" "}
+          {"actualités, transferts, scores et plus encore"}
+        </p>
       </div>
     );
   }

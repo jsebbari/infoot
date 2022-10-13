@@ -9,20 +9,26 @@
 }
 
 .slogan {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .ballIcon {
   margin: 0 3px;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 @media (width <= 700px) {
   .slogan {
-    font-size: 2rem;
+    font-size: 1rem;
+    text-align: center;
   }
   .logoNameInHome {
-    font-size: 7rem;
+    font-size: 4rem;
+  }
+
+  .ballIcon {
+    width: 40px;
+    height: 40px;
   }
 }
