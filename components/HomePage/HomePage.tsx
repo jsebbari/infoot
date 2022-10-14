@@ -23,7 +23,7 @@ const Home = () => {
           <Logo displayInLargeScreen={true} />
           <Link href="/articles">
             <a className={style.homeLink}>
-              Voir l'actualité
+              {"Voir l'actualité"}
             </a>
           </Link>
         </div>
