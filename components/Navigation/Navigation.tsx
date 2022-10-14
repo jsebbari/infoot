@@ -19,7 +19,7 @@ const Navigation = () => {
 
   //functions ____________________________________________
   const router = useRouter();
-  const homeIcon = <ImHome size={30} />;
+  const homeIcon = <a><ImHome size={30} /></a>
 
   const handleShowNav = () => {
     setShowNavbar(!showNavbar);
@@ -50,22 +50,25 @@ const Navigation = () => {
     }
     return "white";
   };
-
+  
   return (
-    <>
-      {screenIsSmall && (
+   <>
+       {screenIsSmall && (
         <span className={styles.hamburgerBtn}>
-          <Hamburger
-            toggled={showNavbar}
-            toggle={setShowNavbar}
-            hideOutline={true}
-            color={toggleMenuBtnColor()}
-          />
-        </span>
-      )}
+            <Hamburger
+              toggled={showNavbar}
+              toggle={setShowNavbar}
+              hideOutline={true}
+              color={toggleMenuBtnColor()}
+            />
+          </span>
+          )}
       <nav className={`${styles.Navigation} ${showNavToggle}`}>
-        <Logo />
-        <ul className={`${styles.navList}`} onClick={handleShowNav}>
+        <Logo/>
+        <ul
+          className={`${styles.navList}`}
+          onClick={handleShowNav}
+        >
           <li className={styles.navItems}>
             <Link href="/">{homeIcon}</Link>
           </li>
@@ -79,8 +82,9 @@ const Navigation = () => {
             <ThemeButton />
           </li>
         </ul>
+  
       </nav>
-    </>
+      </>
   );
 };
 

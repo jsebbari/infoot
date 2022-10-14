@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import { ThemeContextProvider } from "../context/ThemeContext";
 import Footer from "../components/Footer";
-import PropagateLoader from "react-spinners/PropagateLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -36,15 +36,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeContextProvider>
       <div>
-        <PropagateLoader
+        <ClipLoader
           loading={loadingRouter}
-          color={"white"}
+          color={"#128091"}
           size={30}
           aria-label="Loading Spinner"
           className="spinner"
         />
         {/* <Navbar /> */}
-        <Navigation/>
+        <Navigation />
         <Component {...pageProps} />
         <Footer />
       </div>
