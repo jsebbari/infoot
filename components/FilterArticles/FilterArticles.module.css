@@ -34,6 +34,10 @@
   scale: 1.1;
 }
 
+.arrows {
+  display: none;
+}
+
 @media (width <= 900px) {
   .filterNav {
     justify-content: flex-start;
@@ -63,5 +67,19 @@
     width: max-content;
     align-items: center;
     padding: 0.7rem 2rem;
+  }
+  .arrows {
+    display: block;
+    position: absolute;
+    color: rgba(240, 248, 255, 0.285);
+  }
+  .leftArrow {
+    left: 0;
+    top: 0;
+  }
+
+  .rightArrow {
+    right: 0;
+    top: 0;
   }
 }

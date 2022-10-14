@@ -5,7 +5,10 @@ import { ArticleTypes } from "../../types/articlesType";
 import style from "./FilterArticles.module.css";
 import { firstLetterCase } from "../../utils/functions";
 import { ThemeContext } from "../../context/ThemeContext";
-
+import {
+  MdOutlineKeyboardArrowRight,
+  MdOutlineKeyboardArrowLeft,
+} from "react-icons/md";
 interface Props {
   categoriesToDisplay: string[];
   setCategoriesToDisplay: (val: string[]) => void;
@@ -42,8 +45,6 @@ export default function FilterArticles({
       }
     };
 
-   
-
     const fontColor =
       themeFromContext && themeFromContext.theme === "Light"
         ? "black"
@@ -52,6 +53,7 @@ export default function FilterArticles({
     const colorBtn = categoriesToDisplay.includes(category)
       ? style.btnFilterActive
       : style.btnFilterDisabled;
+
     return (
       <li key={uuidv4()}>
         <button
@@ -66,6 +68,23 @@ export default function FilterArticles({
       </li>
     );
   });
-
-  return <ul className={style.filterNav}>{categorieToDisplay}</ul>;
+  const leftArrowIcon = (
+    <MdOutlineKeyboardArrowLeft
+      size={30}
+      className={`${style.arrows} ${style.leftArrow}`}
+    />
+  );
+  const rightArrowIcon = (
+    <MdOutlineKeyboardArrowRight
+      size={30}
+      className={`${style.arrows} ${style.rightArrow}`}
+    />
+  );
+  return (
+    <div style={{ position: "relative" }}>
+      {leftArrowIcon}
+      <ul className={style.filterNav}>{categorieToDisplay}</ul>
+      {rightArrowIcon}
+    </div>
+  );
 }
