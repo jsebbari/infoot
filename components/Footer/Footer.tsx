@@ -1,11 +1,10 @@
 import React from "react";
-import Logo from "../Logo";
 import style from "./Footer.module.css";
 
 const Footer = () => {
   return (
+    // Text copyright in Css
     <footer className={style.footer}>
-      <Logo /> 
     </footer>
   );
 };

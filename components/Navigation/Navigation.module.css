@@ -3,82 +3,70 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width:100%;
+  width: 100%;
   z-index: 5;
-  padding:0 2rem;
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, 0.924);
 }
 
-
-
-
-.navList{
-    display: flex;
-    align-items: center;
-    top:1rem;
-    left:0;
-    padding-right: 2rem;
+.navList {
+  display: flex;
+  align-items: center;
+  top: 1rem;
+  left: 0;
 }
-
-.logoItems{
-  align-self: flex-start;
-}
-
 
 .hideNav {
   visibility: hidden;
-
-    height: 100px;
-    top: -300px;
-    visibility: hidden;
-    transition: all 0.2s ease-out;
+  height: 100px;
+  top: -300px;
+  visibility: hidden;
+  transition: all 0.2s ease-out;
 }
 
 .showNav {
-  height: 100px;
+  height: 80px;
   transition: all 0.2s ease-in;
   border-bottom: 1px solid rgba(255, 255, 255, 0.354);
 }
 
 .navItems {
   text-decoration: none;
-  color: #f6f6f6;
-  margin:0 1rem;
-  font-size: 1.4rem;
   list-style-type: none;
+  color: #f6f6f6;
+  margin: 0 1rem;
+  font-size: 1.4rem;
   cursor: pointer;
 }
 
 .navItems:hover {
-  color: #ffc107;
+  color: #128091;
 }
-.hamburgerBtn{
-  position:fixed;
-top:20px;
-left:20px;
-z-index: 50;
-  background: rgb(194, 21, 21);
-  width:50px;
+.hamburgerBtn {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  z-index: 100;
+  background: #128091;
+  width: 50px;
 }
 
 @media (width <= 700px) {
-
-
   .Navigation {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .navList{
+  .navList {
     flex-direction: column;
   }
-  
 
   .hideNav {
     top: -100vh;
   }
   .showNav {
-    height: 100vh;
+    height: 100%;
     border-bottom: none;
     background-color: rgb(21, 24, 27);
   }
@@ -87,5 +75,4 @@ z-index: 50;
     margin: 1rem 0;
     font-size: 1.3rem;
   }
- 
 }

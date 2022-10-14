@@ -152,7 +152,7 @@
   }
 
   .cardNew:hover {
-    scale: none;
+    transform: none;
     width: 90%;
   }
 }

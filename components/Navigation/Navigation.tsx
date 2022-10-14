@@ -52,26 +52,19 @@ const Navigation = () => {
   };
   
   return (
-    <OutsideClickHandler
-    onOutsideClick={() => {
-      showNavbar && setShowNavbar(false);
-    }}
-    >
+   <>
        {screenIsSmall && (
-        <div className={styles.hamburgerBtn}>
+        <span className={styles.hamburgerBtn}>
             <Hamburger
               toggled={showNavbar}
               toggle={setShowNavbar}
               hideOutline={true}
               color={toggleMenuBtnColor()}
             />
-          </div>
+          </span>
           )}
       <nav className={`${styles.Navigation} ${showNavToggle}`}>
-      <div className={styles.logoInNavbar}><Logo/></div>
-        <div className={styles.hamburgerBtn}>
-         
-        </div>
+        <Logo/>
         <ul
           className={`${styles.navList}`}
           onClick={handleShowNav}
@@ -89,9 +82,9 @@ const Navigation = () => {
             <ThemeButton />
           </li>
         </ul>
-        
+  
       </nav>
-    </OutsideClickHandler>
+      </>
   );
 };
 
