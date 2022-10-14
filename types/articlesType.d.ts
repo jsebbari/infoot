@@ -13,7 +13,7 @@ export interface ArticleTypes {
   category: string;
   title: string;
   intro: string;
-  content: string;
+  content?: string;
   image: string;
   id?: string;
   date:date;
