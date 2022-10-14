@@ -7,9 +7,9 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase.config";
 import { ArticlesTypes } from "../../types/articlesType";
 import Image from "next/image";
-import style from "./Articles.module.css";
 import { ThemeContext } from "../../context/ThemeContext";
 import UseHead from "../../hooks";
+import styles from "./[id].module.css";
 
 export default function Article({ article }: ArticlesTypes) {
   const { title, intro, content, image, category, date } = article;
@@ -26,20 +26,20 @@ export default function Article({ article }: ArticlesTypes) {
   const articleImage = image ? image : imageArticle(category);
   return (
     <div
-      className={style.newViewContainer}
+      className={styles.newViewContainer}
       style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
     >
       <UseHead title={title} content={intro} />
-      <div className={style.newView}>
-        <h3>{firstLetterCase(title)}</h3>
-        <div className={style.imageViewContainer}>
+      <div className={styles.newView}>
+        <div className={styles.imageViewContainer}>
           <Image src={articleImage} alt="img_category" layout="fill" priority />
+        <h3>{firstLetterCase(title)}</h3>
         </div>
 
-        <p className={style.newTextIntro}>{intro}</p>
-        <p className={style.newTextContent}>{content}</p>
+        <p className={styles.newTextIntro}>{intro}</p>
+        <p className={styles.newTextContent}>{content}</p>
         <address>
-          Ecrit par Jamel, le {dayjs(date).format("DD MMMM YYYY")}
+          Ecrit par Jamal, le {dayjs(date).format("DD MMMM YYYY")}
         </address>
       </div>
     </div>
@@ -50,7 +50,6 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { params } = context;
   const { id } = params;
   const docSnap = await getDoc(doc(db, "articles", id));
-
   const article = docSnap.data();
 
   return {
