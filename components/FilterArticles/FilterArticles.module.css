@@ -41,7 +41,7 @@
 @media (width <= 900px) {
   .filterNav {
     justify-content: flex-start;
-    width: 100vw;
+    max-width: 95vw;
     overflow-x: scroll;
     padding: 0 1rem;
     gap: 0;

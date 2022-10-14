@@ -6,7 +6,7 @@
   position:fixed;
   right:50%;
   transform: translate(0,-50%);
-  top:2rem;
+  top:1rem;
   z-index:2000;
 }
 

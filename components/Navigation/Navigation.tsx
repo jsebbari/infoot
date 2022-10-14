@@ -68,7 +68,7 @@ const Navigation = () => {
         <ul
           className={`${styles.navList}`}
           onClick={handleShowNav}
-        >
+          >
           <li className={styles.navItems}>
             <Link href="/">{homeIcon}</Link>
           </li>

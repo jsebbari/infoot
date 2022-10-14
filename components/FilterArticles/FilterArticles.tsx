@@ -81,7 +81,7 @@ export default function FilterArticles({
     />
   );
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative"}}>
       {leftArrowIcon}
       <ul className={style.filterNav}>{categorieToDisplay}</ul>
       {rightArrowIcon}
