@@ -1,6 +1,7 @@
 .filterNav {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
 }
 
@@ -30,14 +31,37 @@
 }
 
 .btnFilterDefault:hover {
- scale:1.1;
+  scale: 1.1;
 }
 
+@media (width <= 900px) {
+  .filterNav {
+    justify-content: flex-start;
+    width: 100vw;
+    overflow-x: scroll;
+    padding: 0 1rem;
+    gap: 0;
+  }
 
-@media (width <= 900px){
-  .filterNav{
-    padding:1rem 0;
-    flex-direction: column;
+  .filterNav li {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+
+  .filterNav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .btnFilterDefault:hover {
+    scale: none;
+  }
+
+  .btnFilterDefault {
+    border-bottom: none;
+    height: 100%;
+    display: flex;
+    width: max-content;
     align-items: center;
+    padding: 0.7rem 2rem;
   }
 }
