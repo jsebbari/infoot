@@ -6,7 +6,8 @@ import { GetServerSideProps } from "next";
 import { db } from "../../firebase/firebase.config";
 import { collection, getDocs } from "firebase/firestore";
 import { ArticlesTypes, ArticleTypes } from "../../types/articlesType";
-import dayjs from "dayjs";
+
+import ArticleCard from "../../components/ArticleCard";
 
 import {
   imageArticle,
@@ -18,7 +19,7 @@ import Link from "next/link";
 import { ThemeContext } from "../../context/ThemeContext";
 import UseHead from "../../hooks";
 
-export default function ServerSideProps(props: ArticlesTypes) {
+export default function Articles(props: ArticlesTypes) {
   const { articles } = props;
 
   // useState____________________________________________________________
@@ -46,33 +47,22 @@ export default function ServerSideProps(props: ArticlesTypes) {
 
   const displayArticles = sortedDesc.map((article) => {
     const { title, intro, category, image, id, date } = article;
-    const articleImage = image ? image : imageArticle(category);
-
+    
     return (
-      <Link href={`articles/${id}`} key={uuidv4()}>
-        <div
-          className={style.cardNew}
-          style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
-        >
-          <div className={style.imageCategoryContainer}>
-            <Image src={articleImage} alt="img_category" layout="fill" />
-            <span className={style.category}>{firstLetterCase(category)}</span>
-            <span className={style.date}>
-              {dayjs(date).format("DD/MM/YYYY")}
-            </span>
-          </div>
-          <div className={style.presentationCard}>
-            <h4>{firstLetterCase(title)}</h4>
-            <p  style={{ background: `${backgroundColor}`, color: `${fontColor}` }}>{splitText(intro, 19)}...</p>
-          </div>
-        </div>
-      </Link>
+      <ArticleCard
+        id={id}
+        category={category}
+        date={date}
+        title={title}
+        intro={intro}
+        image={image}
+      />
     );
   });
 
   return (
     <div
-      className={style.staticProps}
+      className={style.Articles}
       style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
     >
       <UseHead title="Actualités" content="L'actualité football" />

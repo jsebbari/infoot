@@ -1,11 +1,11 @@
-.staticProps {
+.Articles {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.staticProps h1 {
+.Articles h1 {
   width: 100%;
   background-color: #128091;
   text-align: center;
@@ -23,41 +23,6 @@
   gap: 50px;
   margin: 2rem 0;
 }
-.cardNew {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 480px;
-  height: 450px;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 2px 2px 2px silver;
-}
-
-.presentationCard {
-  margin-top: 1rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.presentationCard h4 {
-  color: #915c12;
-  text-align: center;
-  font-size: larger;
-}
-
-.presentationCard p {
-  color: silver;
-  text-align: center;
-}
-
-.cardNew:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-  box-shadow: 2px 2px 2px #128091;
-}
 
 .links {
   background-color: rgb(9, 15, 16);
@@ -73,31 +38,6 @@
 }
 .links:active {
   background-color: rgba(50, 49, 49, 0.573);
-}
-
-.imageCategoryContainer {
-  position: relative;
-  height: 250px;
-  width: 100%;
-  background-color: rgba(29, 151, 181, 0.941);
-  padding: 0.1rem;
-}
-.category {
-  position: absolute;
-  color: rgba(0, 0, 0, 0.806);
-  padding: 0.2rem 2rem;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  background-color: rgba(29, 151, 181, 0.941);
-}
-
-.date {
-  position: absolute;
-  color: rgba(0, 0, 0, 0.806);
-  padding: 0.2rem 1rem;
-  left: 0.5rem;
-  top: 0.5rem;
-  background-color: rgba(181, 102, 29, 0.941);
 }
 
 .dateToday {
@@ -142,17 +82,4 @@
 
 .newTextContent {
   font-size: 1.2rem;
-}
-
-@media (width <= 900px) {
-  .cardNew {
-    scale: 1;
-    box-shadow: none;
-    width: 90%;
-  }
-
-  .cardNew:hover {
-    transform: none;
-    width: 90%;
-  }
 }
