@@ -33,6 +33,7 @@ const ArticleCard = ({
   const fontColor =
     themeFromContext && themeFromContext.theme === "Light" ? "black" : "white";
 
+    
   return (
     <Link href={`articles/${id}`} key={uuidv4()}>
       <div

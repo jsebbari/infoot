@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { imageArticle, firstLetterCase } from "../../utils/functions";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
@@ -10,11 +10,12 @@ import Image from "next/image";
 import { ThemeContext } from "../../context/ThemeContext";
 import UseHead from "../../hooks";
 import styles from "./[id].module.css";
+import { BsFillHeartFill } from "react-icons/bs";
 
 export default function Article({ article }: ArticlesTypes) {
-  const { title, intro, content, image, category, date } = article;
+  const { id, title, intro, content, image, category, date } = article;
   dayjs.locale("fr");
-
+  const [isLike, setIslike] = useState(false);
   // useContext___________________________________________________________
   const themeFromContext = useContext(ThemeContext);
   // functions____________________________________________________________
@@ -24,6 +25,23 @@ export default function Article({ article }: ArticlesTypes) {
     themeFromContext && themeFromContext.theme === "Light" ? "black" : "white";
 
   const articleImage = image ? image : imageArticle(category);
+
+  useEffect(() => {
+    if (localStorage.getItem(title)) {
+      return setIslike(true);
+    }
+  }, []);
+
+  const handleClickHeart = () => {
+    if (!isLike) {
+      localStorage.setItem(title, title);
+      return setIslike(true);
+    }
+    localStorage.removeItem(title)
+    return setIslike(false)
+  };
+
+  const heartIcon = <BsFillHeartFill size={30} color={isLike?"red":"white"} onClick={handleClickHeart} />;
   return (
     <div
       className={styles.newViewContainer}
@@ -33,11 +51,12 @@ export default function Article({ article }: ArticlesTypes) {
       <div className={styles.newView}>
         <div className={styles.imageViewContainer}>
           <Image src={articleImage} alt="img_category" layout="fill" priority />
-        <h3>{firstLetterCase(title)}</h3>
+          <h3>{firstLetterCase(title)}</h3>
         </div>
 
         <p className={styles.newTextIntro}>{intro}</p>
         <p className={styles.newTextContent}>{content}</p>
+       {heartIcon}
         <address>
           Ecrit par Jamal, le {dayjs(date).format("DD MMMM YYYY")}
         </address>
