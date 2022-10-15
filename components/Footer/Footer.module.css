@@ -1,10 +1,9 @@
 .footer {
     width: 100%;
-    display: flex;
     padding: 1rem 0;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    gap:20px;
+    text-align: center;
   }
 
   .footer::after{
@@ -14,18 +13,5 @@
   }
 
 
-  
-  .footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-  }
 
-  @media (width <= 900px) {
-    .footer {
-      flex-direction: column;
-      gap:0;
-    }
-  }
   
