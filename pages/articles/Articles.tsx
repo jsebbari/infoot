@@ -50,6 +50,7 @@ export default function Articles(props: ArticlesTypes) {
     
     return (
       <ArticleCard
+        key={uuidv4()}
         id={id}
         category={category}
         date={date}

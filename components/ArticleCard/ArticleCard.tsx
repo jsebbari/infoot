@@ -35,7 +35,7 @@ const ArticleCard = ({
 
     
   return (
-    <Link href={`articles/${id}`} key={uuidv4()}>
+    <Link href={`articles/${id}`}>
       <div
         className={styles.cardNew}
         style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
