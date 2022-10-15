@@ -26,11 +26,7 @@ export default function Article({ article }: ArticlesTypes) {
 
   const articleImage = image ? image : imageArticle(category);
 
-  useEffect(() => {
-    if (localStorage.getItem(title)) {
-      return setIslike(true);
-    }
-  }, []);
+
 
   const handleClickHeart = () => {
     if (!isLike) {
@@ -41,7 +37,6 @@ export default function Article({ article }: ArticlesTypes) {
     return setIslike(false)
   };
 
-  const heartIcon = <BsFillHeartFill size={30} color={isLike?"red":"white"} onClick={handleClickHeart} />;
   return (
     <div
       className={styles.newViewContainer}
@@ -56,7 +51,6 @@ export default function Article({ article }: ArticlesTypes) {
 
         <p className={styles.newTextIntro}>{intro}</p>
         <p className={styles.newTextContent}>{content}</p>
-       {heartIcon}
         <address>
           Ecrit par Jamal, le {dayjs(date).format("DD MMMM YYYY")}
         </address>
