@@ -7,6 +7,7 @@ import Navigation from "../components/Navigation";
 import { ThemeContextProvider } from "../context/ThemeContext";
 import Footer from "../components/Footer";
 import ClipLoader from "react-spinners/ClipLoader";
+import BarLoader from "react-spinners/BarLoader";
 import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -35,16 +36,18 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router]);
   return (
     <ThemeContextProvider>
+      <BarLoader
+        loading={loadingRouter}
+        color={"#128091"}
+        width={"100%"}
+        aria-label="Loading Spinner"
+        className="spinnerTest"
+        speedMultiplier={0.4}
+      />
       <div>
-        <ClipLoader
-          loading={loadingRouter}
-          color={"#128091"}
-          size={30}
-          aria-label="Loading Spinner"
-          className="spinner"
-        />
-        {/* <Navbar /> */}
         <Navigation />
+
+        {/* <Navbar /> */}
         <Component {...pageProps} />
         <Footer />
       </div>

@@ -55,6 +55,16 @@
   background: #128091;
 }
 
+.activeItem:nth-last-child(n + 2)::after {
+  position: absolute;
+  content: "";
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #128091;
+}
+
 .hamburgerBtn {
   position: fixed;
   top: 20px;

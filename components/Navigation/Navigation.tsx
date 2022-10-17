@@ -19,7 +19,11 @@ const Navigation = () => {
 
   //functions ____________________________________________
   const router = useRouter();
-  const homeIcon = <a><ImHome size={30} /></a>
+  const homeIcon = (
+    <a>
+      <ImHome size={30} />
+    </a>
+  );
 
   const handleShowNav = () => {
     setShowNavbar(!showNavbar);
@@ -50,29 +54,32 @@ const Navigation = () => {
     }
     return "white";
   };
-  
+
+  const itemIsActive = (route: string) => {
+    if (route === router.pathname) {
+      return styles.activeItem;
+    }
+  };
+
   return (
-   <>
-       {screenIsSmall && (
+    <>
+      {screenIsSmall && (
         <span className={styles.hamburgerBtn}>
-            <Hamburger
-              toggled={showNavbar}
-              toggle={setShowNavbar}
-              hideOutline={true}
-              color={toggleMenuBtnColor()}
-            />
-          </span>
-          )}
+          <Hamburger
+            toggled={showNavbar}
+            toggle={setShowNavbar}
+            hideOutline={true}
+            color={toggleMenuBtnColor()}
+          />
+        </span>
+      )}
       <nav className={`${styles.Navigation} ${showNavToggle}`}>
-        <Logo/>
-        <ul
-          className={`${styles.navList}`}
-          onClick={handleShowNav}
-          >
-          <li className={styles.navItems}>
+        <Logo />
+        <ul className={`${styles.navList}`} onClick={handleShowNav}>
+          <li className={`${styles.navItems}`}>
             <Link href="/">{homeIcon}</Link>
           </li>
-          <li className={styles.navItems}>
+          <li className={`${styles.navItems} ${itemIsActive("/articles")}`}>
             <Link href="/articles">Actualités</Link>
           </li>
           <li className={styles.navItems}>
@@ -82,9 +89,8 @@ const Navigation = () => {
             <ThemeButton />
           </li>
         </ul>
-  
       </nav>
-      </>
+    </>
   );
 };
 
