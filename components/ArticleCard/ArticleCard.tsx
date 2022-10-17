@@ -20,7 +20,6 @@ const ArticleCard = ({
   title,
   intro,
 }: ArticleTypes) => {
-  
   // useContext___________________________________________________________
   const themeFromContext = useContext(ThemeContext);
 
@@ -33,7 +32,8 @@ const ArticleCard = ({
   const fontColor =
     themeFromContext && themeFromContext.theme === "Light" ? "black" : "white";
 
-    
+  
+
   return (
     <Link href={`articles/${id}`}>
       <div
@@ -41,7 +41,8 @@ const ArticleCard = ({
         style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
       >
         <div className={styles.imageCategoryContainer}>
-          <Image src={articleImage} alt="img_category" layout="fill" />
+          <Image src={articleImage} alt="img_category" layout="fill" priority/>
+          
           <span className={styles.category}>{firstLetterCase(category)}</span>
           <span className={styles.date}>
             {dayjs(date).format("DD/MM/YYYY")}

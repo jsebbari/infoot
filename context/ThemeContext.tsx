@@ -20,7 +20,7 @@ interface IProviderProps {
 export const ThemeContext = createContext<IThemeContext | null>(null);
 
 export const ThemeContextProvider = ({ children }: IProviderProps) => {
-  const [theme, setTheme] = useState("Dark");
+  const [theme, setTheme] = useState("Light");
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

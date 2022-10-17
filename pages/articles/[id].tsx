@@ -12,6 +12,11 @@ import UseHead from "../../hooks";
 import styles from "./[id].module.css";
 import { BsFillHeartFill } from "react-icons/bs";
 
+
+interface iServerSideProps {
+
+}
+
 export default function Article({ article }: ArticlesTypes) {
   const { id, title, intro, content, image, category, date } = article;
   dayjs.locale("fr");
@@ -59,7 +64,9 @@ export default function Article({ article }: ArticlesTypes) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
+export const getServerSideProps: GetServerSideProps = async (context:any) => {
+
+  
   const { params } = context;
   const { id } = params;
   const docSnap = await getDoc(doc(db, "articles", id));
