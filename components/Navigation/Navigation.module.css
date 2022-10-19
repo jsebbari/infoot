@@ -7,6 +7,9 @@
   z-index: 5;
   padding: 0 1rem;
   background: rgba(0, 0, 0, 0.924);
+  height: 80px;
+  transition: all 0.3s ease-out;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.354);
 }
 
 .navList {
@@ -15,20 +18,6 @@
   top: 1rem;
   left: 0;
   height: 100%;
-}
-
-.hideNav {
-  visibility: hidden;
-  height: 100px;
-  top: -300px;
-  visibility: hidden;
-  transition: all 0.2s ease-out;
-}
-
-.showNav {
-  height: 80px;
-  transition: all 0.2s ease-in;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.354);
 }
 
 .navItems {
@@ -66,7 +55,7 @@
 }
 
 .hamburgerBtn {
-  display:none;
+  display: none;
   position: fixed;
   top: 20px;
   left: 25px;
@@ -83,7 +72,7 @@
   }
 
   .hamburgerBtn {
-    display:block;
+    display: block;
   }
 
   .navList {
@@ -92,9 +81,11 @@
   }
 
   .hideNav {
-    top: -100vh;
+    left: -100vw;
+    height: 100%;
   }
   .showNav {
+    left: 0;
     height: 100%;
     border-bottom: none;
     background-color: rgb(21, 24, 27);
@@ -107,6 +98,5 @@
 
   .navItems:nth-last-child(n + 2)::after {
     display: none;
-    
   }
 }

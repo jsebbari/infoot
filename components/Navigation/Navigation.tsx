@@ -29,20 +29,11 @@ const Navigation = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const screenSize = () => {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth <= 700) {
-        return setScreenIsSmall(true);
-      }
-      return setScreenIsSmall(false);
-    });
+  const handleCloseNav = () => {
+    showNavbar && setShowNavbar(!showNavbar);
   };
-  useEffect(() => {
-    screenSize();
-  }, []);
 
-  const showNavToggle =
-    screenIsSmall && !showNavbar ? styles.hideNav : styles.showNav;
+  const showNavToggle = showNavbar ? styles.showNav : styles.hideNav;
   const toggleMenuBtnColor = () => {
     if (
       themeFromContext &&
@@ -63,19 +54,21 @@ const Navigation = () => {
 
   return (
     <>
-      {screenIsSmall && (
-        <span className={styles.hamburgerBtn}>
-          <Hamburger
-            toggled={showNavbar}
-            toggle={setShowNavbar}
-            hideOutline={true}
-            color={toggleMenuBtnColor()}
-          />
-        </span>
-      )}
-      <nav className={`${styles.Navigation} ${showNavToggle}`}>
+      <span className={styles.hamburgerBtn}>
+        <Hamburger
+          toggled={showNavbar}
+          toggle={setShowNavbar}
+          hideOutline={true}
+          color={toggleMenuBtnColor()}
+        />
+      </span>
+
+      <nav
+        className={`${styles.Navigation} ${showNavToggle}`}
+        onClick={handleCloseNav}
+      >
         <Logo />
-        <ul className={`${styles.navList}`} onClick={handleShowNav}>
+        <ul className={`${styles.navList}`}>
           <li className={`${styles.navItems}`}>
             <Link href="/">{homeIcon}</Link>
           </li>
