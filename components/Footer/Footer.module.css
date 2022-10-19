@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color:rgb(192, 192, 192);
   }
 
   .copyright, .socialMedias {
@@ -16,16 +17,36 @@
     gap:10px;
   }
 
+  .copyright, .socialMedias {
+    margin-left: auto;
+  }
+
+
   .socialMedias li{
     list-style-type: none;
     cursor: pointer;
-    color:rgb(192, 192, 192);
     opacity: .5;
   }
 
   .socialMedias li:hover{
     opacity: 1;
     color:#128091;
+  }
+
+  @media (width <= 700px) {
+    .footer {
+      width: 100vw;
+      padding: 2rem ;
+      gap:10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+
+    .copyright, .socialMedias {
+      margin-left:initial;
+    }
   }
 
 

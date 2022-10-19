@@ -10,6 +10,12 @@ import Image from "next/image";
 import { ThemeContext } from "../../context/ThemeContext";
 import UseHead from "../../hooks";
 import styles from "./[id].module.css";
+import { BsFillHeartFill } from "react-icons/bs";
+
+
+interface iServerSideProps {
+
+}
 
 export default function Article({ article }: ArticlesTypes) {
   const { id, title, intro, content, image, category, date } = article;
@@ -24,6 +30,17 @@ export default function Article({ article }: ArticlesTypes) {
     themeFromContext && themeFromContext.theme === "Light" ? "black" : "white";
 
   const articleImage = image ? image : imageArticle(category);
+
+
+
+  const handleClickHeart = () => {
+    if (!isLike) {
+      localStorage.setItem(title, title);
+      return setIslike(true);
+    }
+    localStorage.removeItem(title)
+    return setIslike(false)
+  };
 
   return (
     <div
@@ -47,7 +64,8 @@ export default function Article({ article }: ArticlesTypes) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
+export const getServerSideProps: GetServerSideProps = async (context:any) => {
+
   const { params } = context;
   const { id } = params;
   const docSnap = await getDoc(doc(db, "articles", id));
