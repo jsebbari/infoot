@@ -25,7 +25,7 @@ export default function FilterArticles({
   articles,
 }: Props) {
   const themeFromContext = useContext(ThemeContext);
-  
+
   const categorieToDisplay = categories.map((category) => {
     const handleClick = () => {
       if (!categoriesToDisplay.includes(category)) {
@@ -82,7 +82,7 @@ export default function FilterArticles({
     />
   );
   return (
-    <div style={{ position: "relative"}}>
+    <div style={{ position: "relative" }}>
       {leftArrowIcon}
       <ul className={style.filterNav}>{categorieToDisplay}</ul>
       {rightArrowIcon}
