@@ -5,25 +5,28 @@
   align-items: center;
   flex-direction: column;
   color: rgb(255, 255, 255);
-  background-image: url("https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2021/06/euro-2020-les-supporters-tribune-ont-ils-une-influence-sur-match-750x410.jpg");
+  background-image: url('../../assets/images/bg-home.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  
 }
 
 .logoAndLink {
   position: relative;
   z-index: 2;
   display: flex;
-  padding:2rem;
+  padding:5rem;
   flex-direction: column;
   align-items: center;
-  background: rgba(12, 14, 12, 0.467);
+  background: rgba(0, 0, 0, 0.606);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 20px;
   overflow: hidden;
 }
 
 .logoAndLink::before{
+  z-index:100;
 content: "Live";
 position:absolute;
 background: rgb(241, 85, 85);
@@ -35,14 +38,17 @@ text-align: center;
 }
 
 
+
+
 .homeLink {
-  background: none;
-  padding: 1rem 3rem;
+  padding: 1.5rem 3rem;
   position: relative;
+  border-radius: 5px;
+  background: rgba(29, 151, 181, 0.941);
 }
 
 
-.homeLink::after{
+/* .homeLink::after{
   content: "";
 position:absolute;
 background: rgb(246, 239, 239);
@@ -50,15 +56,18 @@ height:2px;
 width:100%;
 left:0;
 bottom:0;
-}
+} */
 
 .homeLink:hover {
-  background: rgba(245, 120, 11, 0.629);
+  
+  background:rgba(28, 134, 160, 0.738);
 }
 
-.overlay {
+/* .overlay {
   position: absolute;
   height: 100vh;
   width: 100%;
-  background: rgba(0, 0, 0, 0.817);
-}
+  top:0;
+  left:0;
+  background: rgba(0, 0, 0, 0.283);
+}  */

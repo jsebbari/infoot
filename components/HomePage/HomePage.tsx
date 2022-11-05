@@ -18,8 +18,8 @@ const Home = () => {
     <>
       <UseHead title="Home" content="Toute l'actualité football du moment" />
       <div className={style.loaderPageContainer}>
-        <div className={style.overlay}></div>
         <div className={style.logoAndLink}>
+        <div className={style.overlay}></div>
           <Logo displayInLargeScreen={true} />
           <Link href="/articles">
             <a className={style.homeLink}>

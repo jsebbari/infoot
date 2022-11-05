@@ -5,13 +5,12 @@
   width: 400px;
   height: 450px;
   transition: all 0.5s ease-in-out;
-  box-shadow: 2px 2px 2px silver;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .cardNew:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
   cursor: pointer;
-  box-shadow: 2px 2px 2px #128091;
 }
 
 .imageCategoryContainer {

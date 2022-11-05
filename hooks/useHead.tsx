@@ -9,13 +9,11 @@ interface IProps {
 const UseHead = (props:IProps) => {
     const {title,content}=props
   return (
-    <div>
       <Head>
         <title>Infoot | {title}</title>
         <meta name="description" content={content}/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    </div>
   );
 };
 

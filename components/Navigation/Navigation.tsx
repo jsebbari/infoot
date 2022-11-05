@@ -11,7 +11,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 
 const Navigation = () => {
   //states _______________________________________________
-  const [screenIsSmall, setScreenIsSmall] = useState(false);
+
   const [showNavbar, setShowNavbar] = useState(false);
 
   // useContext___________________________________________________________
@@ -25,9 +25,6 @@ const Navigation = () => {
     </a>
   );
 
-  const handleShowNav = () => {
-    setShowNavbar(!showNavbar);
-  };
 
   const handleCloseNav = () => {
     showNavbar && setShowNavbar(!showNavbar);
@@ -37,9 +34,7 @@ const Navigation = () => {
   const toggleMenuBtnColor = () => {
     if (
       themeFromContext &&
-      themeFromContext.theme === "Light" &&
-      !showNavbar &&
-      router.pathname !== "/"
+      themeFromContext.theme === "Light" 
     ) {
       return "black";
     }

@@ -45,9 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         speedMultiplier={0.4}
       />
       <div>
-        <Navigation />
-
-        {/* <Navbar /> */}
+        {router.pathname !== "/" && <Navigation />}
         <Component {...pageProps} />
         <Footer />
       </div>
