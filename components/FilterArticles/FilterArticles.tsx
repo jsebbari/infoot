@@ -9,6 +9,7 @@ import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
 } from "react-icons/md";
+
 interface Props {
   categoriesToDisplay: string[];
   setCategoriesToDisplay: (val: string[]) => void;

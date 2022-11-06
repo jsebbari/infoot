@@ -6,6 +6,7 @@ import { GetServerSideProps } from "next";
 import { db } from "../../firebase/firebase.config";
 import { collection, getDocs } from "firebase/firestore";
 import { ArticlesTypes, ArticleTypes } from "../../types/articlesType";
+import { categories } from "../../assets/categories";
 
 import ArticleCard from "../../components/ArticleCard";
 
@@ -47,7 +48,7 @@ export default function Articles(props: ArticlesTypes) {
 
   const displayArticles = sortedDesc.map((article) => {
     const { title, intro, category, image, id, date } = article;
-    
+    !categories.includes(category)&&categories.push(category)
     return (
       <ArticleCard
         key={uuidv4()}
