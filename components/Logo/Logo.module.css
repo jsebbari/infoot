@@ -9,8 +9,22 @@
 }
 
 .slogan {
-  font-size: 2rem;
+  list-style: none;
+  font-size: 1.3rem;
+  display: flex;
 }
+.slogan::after{
+  content:"...";
+
+}
+
+.slogan li:nth-child(2){
+ margin:0 .3rem;
+ }
+
+.slogan li:nth-child(2)::after, .slogan li:nth-child(2)::before{
+  content:",";
+ }
 
 .ballIcon {
   margin: 0 3px;
@@ -20,15 +34,17 @@
 
 @media (width <= 700px) {
   .slogan {
-    font-size: 1rem;
     text-align: center;
   }
   .logoNameInHome {
-    font-size: 4rem;
+    max-width: 100%;
+    font-size: 6rem;
+    max-width: 100vw;
+    padding-top: 1rem;
   }
 
   .ballIcon {
-    width: 40px;
-    height: 40px;
+    max-width: 50px;
+    max-height: 50px;
   }
 }

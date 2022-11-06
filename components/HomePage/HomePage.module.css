@@ -1,4 +1,4 @@
-.loaderPageContainer {
+.homePageContainer {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   background-image: url('../../assets/images/bg-home.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size:cover;
   
 }
 
@@ -16,8 +16,10 @@
   position: relative;
   z-index: 2;
   display: flex;
-  padding:5rem;
+  padding: 5rem;
+  max-height:400px;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.606);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -45,6 +47,7 @@ text-align: center;
   position: relative;
   border-radius: 5px;
   background: rgba(29, 151, 181, 0.941);
+  font-size: 1.5rem;
 }
 
 
@@ -63,6 +66,8 @@ bottom:0;
   background:rgba(28, 134, 160, 0.738);
 }
 
+
+
 /* .overlay {
   position: absolute;
   height: 100vh;
@@ -71,3 +76,18 @@ bottom:0;
   left:0;
   background: rgba(0, 0, 0, 0.283);
 }  */
+
+
+@media (width <= 700px) {
+  .logoAndLink {
+    min-height:100vh;
+    width:100vw;
+    padding:0;
+  }
+
+  .homePageContainer {
+    background-position:right;
+    background-size:cover;
+    
+  }
+}

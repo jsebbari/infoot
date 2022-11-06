@@ -58,10 +58,10 @@
   text-align: center;
 }
 
-@media (width <= 900px) {
+@media (width <= 700px) {
   .cardNew {
     scale: 1;
-    box-shadow: none;
+    box-shadow: silver 0px 3px 8px;
     width: 90%;
   }
 

@@ -38,6 +38,12 @@ const Logo = (props: IProps) => {
     />
   );
 
+  const sloganItems =["Actualités", "Transferts", "Scores "]
+
+  const displaySloganItems = sloganItems.map((item:string)=> {
+    return <li>{item}</li>
+  })
+
   if (!displayInLargeScreen) {
     const firstBallIcon = (
       <GiSoccerBall size={25} color={"rgba(181, 102, 29, 0.941)"} />
@@ -82,14 +88,17 @@ const Logo = (props: IProps) => {
           Inf{firstBallIcon}
           {secondBallIcon}t
         </h2>
-        <p
+        {/* <p
           className={style.slogan}
           data-aos="zoom-out"
           data-aos-duration="1000"
         >
           {" "}
-          {"actualités, transferts, scores et plus encore"}
-        </p>
+          {"actualités, transferts, scores"}
+        </p> */}
+        <ul className={style.slogan}>
+        {displaySloganItems}
+        </ul>
       </div>
     );
   }
