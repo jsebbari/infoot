@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import style from "./Logo.module.css";
 import { GiSoccerKick, GiSoccerBall } from "react-icons/gi";
+import { v4 as uuidv4 } from "uuid";
 
 import Link from "next/link";
 import AOS from "aos";
@@ -41,7 +42,7 @@ const Logo = (props: IProps) => {
   const sloganItems =["Actualités", "Transferts", "Scores "]
 
   const displaySloganItems = sloganItems.map((item:string)=> {
-    return <li>{item}</li>
+    return <li key={uuidv4()}>{item}</li>
   })
 
   if (!displayInLargeScreen) {
