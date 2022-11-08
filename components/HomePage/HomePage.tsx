@@ -21,9 +21,7 @@ const Home = () => {
         <div className={style.logoAndLink}>
           <Logo displayInLargeScreen={true} />
           <Link href="/articles">
-            <a className={style.homeLink}>
-              {"Voir l'actualité"}
-            </a>
+            <a className={style.homeLink}>{"Voir l'actualité"}</a>
           </Link>
         </div>
       </div>

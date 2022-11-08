@@ -39,11 +39,11 @@ const Logo = (props: IProps) => {
     />
   );
 
-  const sloganItems =["Actualités", "Transferts", "Scores "]
+  const sloganItems = ["Actualités", "Transferts", "Scores "];
 
-  const displaySloganItems = sloganItems.map((item:string)=> {
-    return <li key={uuidv4()}>{item}</li>
-  })
+  const displaySloganItems = sloganItems.map((item: string) => {
+    return <li key={uuidv4()}>{item}</li>;
+  });
 
   if (!displayInLargeScreen) {
     const firstBallIcon = (
@@ -70,26 +70,22 @@ const Logo = (props: IProps) => {
         </div>
       </Link>
     );
-  } else {
-    return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom: "1rem",
-        }}
-      >
-        <h2
-          className={logoClassName}
-          data-aos="zoom-in"
-          data-aos-duration="800"
-        >
-          Inf{firstBallIcon}
-          {secondBallIcon}t
-        </h2>
-        {/* <p
+  }
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: "1rem",
+      }}
+    >
+      <h2 className={logoClassName} data-aos="zoom-in" data-aos-duration="800">
+        Inf{firstBallIcon}
+        {secondBallIcon}t
+      </h2>
+      {/* <p
           className={style.slogan}
           data-aos="zoom-out"
           data-aos-duration="1000"
@@ -97,12 +93,9 @@ const Logo = (props: IProps) => {
           {" "}
           {"actualités, transferts, scores"}
         </p> */}
-        <ul className={style.slogan}>
-        {displaySloganItems}
-        </ul>
-      </div>
-    );
-  }
+      <ul className={style.slogan}>{displaySloganItems}</ul>
+    </div>
+  );
 };
 
 export default Logo;

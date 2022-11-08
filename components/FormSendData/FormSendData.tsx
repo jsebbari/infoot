@@ -32,6 +32,7 @@ export default function FormSendData() {
           intro: introInputRef.current.value,
           category: categoryInputRef.current.value,
           image: imageInputRef.current.value,
+          views: 0,
           date: new Date().toISOString(),
         });
         setSuccessFirebase("Infos envoyées sur DB Firebase");
@@ -131,6 +132,7 @@ export default function FormSendData() {
             height: "40px",
           }}
         />
+
         <button type="submit" style={{ padding: "1rem 2rem", width: "50%" }}>
           Send to firebase
         </button>

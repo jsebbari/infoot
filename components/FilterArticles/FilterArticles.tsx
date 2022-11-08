@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useContext } from "react";
+import { useContext } from "react";
 import { categories } from "../../assets/categories";
 import { v4 as uuidv4 } from "uuid";
 import { ArticleTypes } from "../../types/articlesType";

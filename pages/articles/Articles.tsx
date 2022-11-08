@@ -1,22 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import style from "./Articles.module.css";
-import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import { GetServerSideProps } from "next";
 import { db } from "../../firebase/firebase.config";
 import { collection, getDocs } from "firebase/firestore";
 import { ArticlesTypes, ArticleTypes } from "../../types/articlesType";
 import { categories } from "../../assets/categories";
-
 import ArticleCard from "../../components/ArticleCard";
-
-import {
-  imageArticle,
-  firstLetterCase,
-  splitText,
-} from "../../utils/functions";
 import FilterArticles from "../../components/FilterArticles";
-import Link from "next/link";
 import { ThemeContext } from "../../context/ThemeContext";
 import UseHead from "../../hooks";
 
@@ -47,8 +38,8 @@ export default function Articles(props: ArticlesTypes) {
   );
 
   const displayArticles = sortedDesc.map((article) => {
-    const { title, intro, category, image, id, date } = article;
-    !categories.includes(category)&&categories.push(category)
+    const { title, intro, category, image, id, date, views } = article;
+    !categories.includes(category) && categories.push(category);
     return (
       <ArticleCard
         key={uuidv4()}
@@ -58,6 +49,7 @@ export default function Articles(props: ArticlesTypes) {
         title={title}
         intro={intro}
         image={image}
+        views={views}
       />
     );
   });
@@ -82,19 +74,20 @@ export default function Articles(props: ArticlesTypes) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const querySnapshot = await getDocs(collection(db, "articles"));
-  const articles = querySnapshot.docs.map((doc) => {
-    const articleToString = JSON.stringify(doc.data());
-    const parseArticle = JSON.parse(articleToString);
-    return { ...parseArticle, id: doc.id };
-  });
+  try {
+    const querySnapshot = await getDocs(collection(db, "articles"));
+    const articles = querySnapshot.docs.map((doc) => {
+      const articleToString = JSON.stringify(doc.data());
+      const parseArticle = JSON.parse(articleToString);
+      return { ...parseArticle, id: doc.id };
+    });
 
-  if (!articles.length) {
+    return {
+      props: { articles },
+    };
+  } catch (error) {
     return {
       notFound: true,
     };
   }
-  return {
-    props: { articles },
-  };
 };

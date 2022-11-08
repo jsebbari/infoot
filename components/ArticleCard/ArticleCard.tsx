@@ -2,10 +2,10 @@ import { useContext } from "react";
 import styles from "./ArticleCard.module.css";
 import { ThemeContext } from "../../context/ThemeContext";
 import { ArticleTypes } from "../../types/articlesType";
-import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
+import { BsEyeFill } from "react-icons/bs";
 import {
   firstLetterCase,
   imageArticle,
@@ -19,6 +19,7 @@ const ArticleCard = ({
   image,
   title,
   intro,
+  views
 }: ArticleTypes) => {
   // useContext___________________________________________________________
   const themeFromContext = useContext(ThemeContext);
@@ -32,8 +33,6 @@ const ArticleCard = ({
   const fontColor =
     themeFromContext && themeFromContext.theme === "Light" ? "black" : "white";
 
-  
-
   return (
     <Link href={`articles/${id}`}>
       <div
@@ -41,8 +40,8 @@ const ArticleCard = ({
         style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
       >
         <div className={styles.imageCategoryContainer}>
-          <Image src={articleImage} alt="img_category" layout="fill" priority/>
-          
+          <Image src={articleImage} alt="img_category" layout="fill" priority />
+
           <span className={styles.category}>{firstLetterCase(category)}</span>
           <span className={styles.date}>
             {dayjs(date).format("DD/MM/YYYY")}
@@ -50,6 +49,11 @@ const ArticleCard = ({
         </div>
         <div className={styles.presentationCard}>
           <h4>{firstLetterCase(title)}</h4>
+          <div  className={styles.viewsContainer} >
+          <BsEyeFill />
+            <span>{views}</span>
+          </div>
+         
           <p
             style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
           >

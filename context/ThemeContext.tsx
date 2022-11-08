@@ -1,16 +1,8 @@
-import {
-  createContext,
-  FC,
-  ReactNode,
-  useState,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-} from "react";
+import { createContext, ReactNode, useState } from "react";
 
 interface IThemeContext {
   theme: string;
-  setTheme: (val: string) => void 
+  setTheme: (val: string) => void;
 }
 
 interface IProviderProps {

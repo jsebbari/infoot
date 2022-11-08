@@ -12,7 +12,21 @@
   transform: scale(1.03);
   cursor: pointer;
 }
+.viewsContainer{
+  position: absolute;
+  right:1rem;
+  bottom:1rem;
+  background: silver;
+  color:rgb(0, 0, 0);
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .3rem .5rem;
+  gap:5px;
+  
 
+}
 .imageCategoryContainer {
   position: relative;
   height: 250px;

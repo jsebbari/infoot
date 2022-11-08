@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import styles from "./Navigation.module.css";
 import { useRouter } from "next/router";
-import OutsideClickHandler from "react-outside-click-handler";
 import { Squash as Hamburger } from "hamburger-react";
 import ThemeButton from "../ThemeButton";
 import Logo from "../Logo";

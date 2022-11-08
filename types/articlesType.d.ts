@@ -17,4 +17,5 @@ export interface ArticleTypes {
   image: string;
   id?: string;
   date:date;
+  views:number;
 }

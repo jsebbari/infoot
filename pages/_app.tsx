@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import { ThemeContextProvider } from "../context/ThemeContext";
 import Footer from "../components/Footer";
-import ClipLoader from "react-spinners/ClipLoader";
 import BarLoader from "react-spinners/BarLoader";
 import "aos/dist/aos.css";
 
