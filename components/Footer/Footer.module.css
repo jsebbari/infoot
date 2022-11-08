@@ -34,9 +34,10 @@
   }
 
   @media (width <= 700px) {
+    
     .footer {
       width: 100vw;
-      padding: 2rem ;
+      padding: 3rem 2rem ;
       gap:10px;
       display: flex;
       justify-content: center;
