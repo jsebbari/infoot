@@ -1,1 +1,1 @@
-export { default,getServerSideProps } from "./Articles";
+export { default, getServerSideProps } from "./Articles";

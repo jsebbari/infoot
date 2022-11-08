@@ -13,18 +13,18 @@
   font-size: 1.3rem;
   display: flex;
 }
-.slogan::after{
-  content:"...";
-
+.slogan::after {
+  content: "...";
 }
 
-.slogan li:nth-child(2){
- margin:0 .3rem;
- }
+.slogan li:nth-child(2) {
+  margin: 0 0.3rem;
+}
 
-.slogan li:nth-child(2)::after, .slogan li:nth-child(2)::before{
-  content:",";
- }
+.slogan li:nth-child(2)::after,
+.slogan li:nth-child(2)::before {
+  content: ",";
+}
 
 .ballIcon {
   margin: 0 3px;

@@ -10,6 +10,8 @@ interface IProps {
   displayInLargeScreen?: boolean;
 }
 const Logo = (props: IProps) => {
+  const { displayInLargeScreen } = props;
+  
   const aosAnime = () => {
     AOS.init();
     AOS.refresh();
@@ -18,7 +20,6 @@ const Logo = (props: IProps) => {
     return aosAnime();
   }, []);
 
-  const { displayInLargeScreen } = props;
   const logoClassName = displayInLargeScreen
     ? style.logoNameInHome
     : style.logoName;
@@ -85,14 +86,6 @@ const Logo = (props: IProps) => {
         Inf{firstBallIcon}
         {secondBallIcon}t
       </h2>
-      {/* <p
-          className={style.slogan}
-          data-aos="zoom-out"
-          data-aos-duration="1000"
-        >
-          {" "}
-          {"actualités, transferts, scores"}
-        </p> */}
       <ul className={style.slogan}>{displaySloganItems}</ul>
     </div>
   );

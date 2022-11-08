@@ -1,1 +1,1 @@
-export const categories:string[]=[]
+export const categories: string[] = [];

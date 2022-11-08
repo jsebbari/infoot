@@ -1,13 +1,11 @@
 export interface ArticlesTypes {
   articles: ArticleTypes[];
-  article:ArticleTypes 
+  article: ArticleTypes;
 }
 
-export interface IarticlesFiltered{
-  articleFiltered:ArticleTypes[];
+export interface IarticlesFiltered {
+  articleFiltered: ArticleTypes[];
 }
-
-
 
 export interface ArticleTypes {
   category: string;
@@ -16,6 +14,6 @@ export interface ArticleTypes {
   content?: string;
   image: string;
   id?: string;
-  date:date;
-  views:number;
+  date: date;
+  views: number;
 }

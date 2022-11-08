@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Logo from "../Logo";
-import style from "./HomePage.module.css";
+import styles from "./HomePage.module.css";
 import Link from "next/link";
 import AOS from "aos";
 import UseHead from "../../hooks";
@@ -17,11 +17,11 @@ const Home = () => {
   return (
     <>
       <UseHead title="Home" content="Toute l'actualité football du moment" />
-      <div className={style.homePageContainer}>
-        <div className={style.logoAndLink}>
+      <div className={styles.homePageContainer}>
+        <div className={styles.logoAndLink}>
           <Logo displayInLargeScreen={true} />
           <Link href="/articles">
-            <a className={style.homeLink}>{"Voir l'actualité"}</a>
+            <a className={styles.homeLink}>{"Voir l'actualité"}</a>
           </Link>
         </div>
       </div>

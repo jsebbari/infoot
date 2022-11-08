@@ -25,8 +25,10 @@ export default function FilterArticles({
   articleFiltered,
   articles,
 }: Props) {
+  //context_______________________________________________________________
   const themeFromContext = useContext(ThemeContext);
 
+  //functions_____________________________________________________________
   const categorieToDisplay = categories.map((category) => {
     const handleClick = () => {
       if (!categoriesToDisplay.includes(category)) {
@@ -70,6 +72,8 @@ export default function FilterArticles({
       </li>
     );
   });
+
+  //variables_____________________________________________________________
   const leftArrowIcon = (
     <MdOutlineKeyboardArrowLeft
       size={30}

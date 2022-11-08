@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { imageArticle, firstLetterCase } from "../../utils/functions";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
@@ -14,7 +14,6 @@ import styles from "./[id].module.css";
 export default function Article({ article }: ArticlesTypes) {
   const { id, title, intro, content, image, category, date, views } = article;
 
-  
   // dates________________________________________________________________
   dayjs.locale("fr");
   // useContext___________________________________________________________
@@ -24,7 +23,6 @@ export default function Article({ article }: ArticlesTypes) {
     themeFromContext && themeFromContext.theme === "Light" ? "white" : "black";
   const fontColor =
     themeFromContext && themeFromContext.theme === "Light" ? "black" : "white";
-
   const articleImage = image ? image : imageArticle(category);
 
   return (
@@ -50,14 +48,17 @@ export default function Article({ article }: ArticlesTypes) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-
   try {
     const { params } = context;
     const { id } = params;
     const docSnap = await getDoc(doc(db, "articles", id));
     const article = docSnap.data();
-  
-    await setDoc(doc(db, "articles", id),{ views: article?.views +1 }, { merge: true });
+
+    await setDoc(
+      doc(db, "articles", id),
+      { views: article?.views + 1 },
+      { merge: true }
+    );
     return {
       props: { article },
     };
@@ -66,7 +67,4 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
       notFound: true,
     };
   }
-
-
- 
 };

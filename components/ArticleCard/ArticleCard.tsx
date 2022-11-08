@@ -19,12 +19,12 @@ const ArticleCard = ({
   image,
   title,
   intro,
-  views
+  views,
 }: ArticleTypes) => {
   // useContext___________________________________________________________
   const themeFromContext = useContext(ThemeContext);
 
-  // functions____________________________________________________________
+  // variables____________________________________________________________
   const articleImage = image ? image : imageArticle(category);
 
   const backgroundColor =
@@ -49,11 +49,11 @@ const ArticleCard = ({
         </div>
         <div className={styles.presentationCard}>
           <h4>{firstLetterCase(title)}</h4>
-          <div  className={styles.viewsContainer} >
-          <BsEyeFill />
+          <div className={styles.viewsContainer}>
+            <BsEyeFill />
             <span>{views}</span>
           </div>
-         
+
           <p
             style={{ background: `${backgroundColor}`, color: `${fontColor}` }}
           >

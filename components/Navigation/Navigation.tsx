@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import styles from "./Navigation.module.css";
 import { useRouter } from "next/router";
 import { Squash as Hamburger } from "hamburger-react";
@@ -10,7 +10,6 @@ import { ThemeContext } from "../../context/ThemeContext";
 
 const Navigation = () => {
   //states _______________________________________________
-
   const [showNavbar, setShowNavbar] = useState(false);
 
   // useContext___________________________________________________________
@@ -24,17 +23,13 @@ const Navigation = () => {
     </a>
   );
 
-
   const handleCloseNav = () => {
     showNavbar && setShowNavbar(!showNavbar);
   };
 
   const showNavToggle = showNavbar ? styles.showNav : styles.hideNav;
   const toggleMenuBtnColor = () => {
-    if (
-      themeFromContext &&
-      themeFromContext.theme === "Light" 
-    ) {
+    if (themeFromContext && themeFromContext.theme === "Light") {
       return "black";
     }
     return "white";
