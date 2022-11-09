@@ -12,7 +12,7 @@ const UseHead = (props: IProps) => {
     <Head>
       <title>Infoot | {title}</title>
       <meta name="description" content={content} />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon/favicon.ico" />
     </Head>
   );
 };
