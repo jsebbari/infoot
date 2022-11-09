@@ -19,7 +19,7 @@ const Navigation = () => {
   const router = useRouter();
   const homeIcon = (
     <a>
-      <ImHome size={30} />
+      <ImHome size={40} />
     </a>
   );
 
@@ -64,8 +64,8 @@ const Navigation = () => {
           <li className={`${styles.navItems} ${itemIsActive("/articles")}`}>
             <Link href="/articles">Actualités</Link>
           </li>
-          <li className={styles.navItems}>
-            <Link href="/">About</Link>
+          <li className={`${styles.navItems} ${itemIsActive("/a-propos")}`}>
+            <Link href="/a-propos">A propos</Link>
           </li>
           <li className={styles.navItems}>
             <ThemeButton />
