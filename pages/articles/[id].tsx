@@ -10,10 +10,9 @@ import Image from "next/image";
 import { ThemeContext } from "../../context/ThemeContext";
 import UseHead from "../../hooks";
 import styles from "./[id].module.css";
-import HeartIcon from "../../components/HeartIcon";
 
 export default function Article({ article }: ArticlesTypes) {
-  const { id, title, intro, content, image, category, date, views } = article;
+  const { id, title, intro, content, image, category, date } = article;
 
   // dates________________________________________________________________
   dayjs.locale("fr");
@@ -43,10 +42,6 @@ export default function Article({ article }: ArticlesTypes) {
         <address>
           Ecrit par Jamal, le {dayjs(date).format("DD MMMM YYYY")}
         </address>
-        <div className={styles.addToFavorites}>
-          <p>Tu as aimé cet article? Ajoute le à tes favoris</p>
-          <HeartIcon />
-        </div>
       </div>
     </div>
   );
